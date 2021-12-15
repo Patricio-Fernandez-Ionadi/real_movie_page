@@ -1,0 +1,11 @@
+GET http://localhost:3001/trendings/movie/day
+###
+GET http://localhost:3001/trendings/movie/week
+###
+GET http://localhost:3001/trendings/tv/day
+###
+GET http://localhost:3001/trendings/tv/week
+###
+GET http://localhost:3001/trendings/all/day
+###
+GET http://localhost:3001/trendings/all/week
