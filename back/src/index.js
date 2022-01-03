@@ -1,12 +1,12 @@
 require("dotenv").config()
-require('./connection')
+require("./connection")
 const express = require("express")
 const app = express()
 const axios = require("axios")
 const cors = require("cors")
 
-const Serie = require('./models/serieModel')
-const Movie = require('./models/movieModel')
+const Serie = require("./models/serieModel")
+const Movie = require("./models/movieModel")
 
 app.use(express.json())
 app.use(cors())
@@ -27,13 +27,13 @@ app.get("/", (req, res) => {
 })
 
 // retorna paginas de 20 peliculas
-app.get("/trendings/:genre/:timeRange", (req, res) => {
-	const { genre, timeRange } = req.params
+app.get("/trendings/:mediaType/:timeRange", (req, res) => {
+	const { mediaType, timeRange } = req.params
 	const page = req.query.page || 1
 
 	return axios
 		.get(
-			`https://api.themoviedb.org/3/trending/${genre}/${timeRange}?page=${page}&${APIKEYPARAMETER}`
+			`https://api.themoviedb.org/3/trending/${mediaType}/${timeRange}?page=${page}&${APIKEYPARAMETER}`
 		)
 		.then((trendings) => res.json(trendings.data))
 		.catch((error) => res.json(error))
@@ -41,46 +41,45 @@ app.get("/trendings/:genre/:timeRange", (req, res) => {
 
 // retorna 1 sola pelicula
 app.get("/:mediaType/:movieId", async (req, res) => {
-	const {movieId, mediaType} = req.params
+	const { movieId, mediaType } = req.params
 
-	const serie = await Serie.find({id: movieId})
-	const movie = await Movie.find({id: movieId})
+	const serie = await Serie.find({ id: movieId })
+	const movie = await Movie.find({ id: movieId })
 
 	if (!serie[0] && movie[0]) {
-		console.log('movie obtenida desde mongo')
+		console.log("movie obtenida desde mongo")
 		return res.json(movie)
 	} else if (!movie[0] && serie[0]) {
-		console.log('serie obtenida desde mongo')
+		console.log("serie obtenida desde mongo")
 		return res.json(serie)
 	} else {
-		console.log('no se encontraron resultados en mongo, accediendo a api para guardar en db')
+		console.log(
+			"no se encontraron resultados en mongo, accediendo a api para guardar en db"
+		)
 
-		const {data} = await axios
+		const { data } = await axios
 			.get(
 				`https://api.themoviedb.org/3/${mediaType}/${movieId}?${APIKEYPARAMETER}`
-			).catch(err => res.json(err))
+			)
+			.catch((err) => res.json(err))
 
-		if (mediaType === 'tv') {
+		if (mediaType === "tv") {
 			const newSerie = new Serie(data)
 			let savedSerie = await newSerie.save()
-			console.log('serie saved in db')
+			console.log("serie saved in db")
 			return res.json(savedSerie)
-		}else if (mediaType === 'movie'){
+		} else if (mediaType === "movie") {
 			const newMovie = new Movie(data)
 			let savedMovie = await newMovie.save()
-			console.log('movie saved in db')
+			console.log("movie saved in db")
 			return res.json(savedMovie)
-		}else{
-			return console.log('serie media type not valid')
+		} else {
+			return console.log(
+				"serie media type not valid, nothing has been stored in DB"
+			)
 		}
-
-
 	}
 })
-
-
-
-// })
 
 // retorna 1 sola pelicula
 app.get("/movie/latest", (req, res) => {

@@ -1,20 +1,11 @@
 import ReactDOM from "react-dom"
-import "./index.css"
-import App from "./App"
 import { BrowserRouter } from "react-router-dom"
+import "./index.css"
+import { MovieApp } from "./MovieApp"
 
-import { Provider } from "react-redux"
-import { store } from "./store"
-
-const renderApp = () => {
-	ReactDOM.render(
-		<Provider store={store}>
-			<BrowserRouter>
-				<App />
-			</BrowserRouter>
-		</Provider>,
-		document.getElementById("root")
-	)
-}
-renderApp()
-store.subscribe(renderApp)
+ReactDOM.render(
+	<BrowserRouter>
+		<MovieApp />
+	</BrowserRouter>,
+	document.getElementById("root")
+)
