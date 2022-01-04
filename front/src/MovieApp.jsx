@@ -1,5 +1,4 @@
 // STYLES
-import "./App.css"
 import { Routes, Route, Link } from "react-router-dom"
 
 import { Trendings, General, Home, MovieDetail } from "./pages"

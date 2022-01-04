@@ -1,6 +1,9 @@
 import { makeStyles } from "@mui/styles"
 import React from "react"
 import { useTrendingsContext } from "../context"
+import { color } from "../constant"
+
+const { btn, btnHover } = color
 
 const useStyles = makeStyles({
 	container: {
@@ -23,17 +26,17 @@ const useStyles = makeStyles({
 		fontSize: "14px",
 		fontFamily: "sans-serif",
 		color: "#fff",
-		backgroundColor: "#009578",
+		backgroundColor: btn,
 		cursor: "pointer",
 		transition: "backgorund .2s ease",
 		"&:not(:last-of-type)": {
-			borderRight: "1px solid #006b56",
+			borderRight: `1px solid ${btnHover}`,
 		},
 	},
 	radio_input: {
 		display: "none",
 		"&:checked + $radio_label": {
-			backgroundColor: "#006b56",
+			backgroundColor: btnHover,
 		},
 	},
 })
