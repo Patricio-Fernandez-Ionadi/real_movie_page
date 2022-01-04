@@ -1,8 +1,12 @@
 import React from "react"
-
 import { Link } from "react-router-dom"
+
 import { makeStyles } from "@mui/styles"
+
 import { environment } from "../privateKeys"
+import { color, transition, mediumShadow } from "../constant"
+
+const { light, medium, white } = color
 
 const useStyles = makeStyles({
 	card: {
@@ -11,10 +15,12 @@ const useStyles = makeStyles({
 		position: "relative",
 		border: "1px solid rgba(0,0,0,.2)",
 		borderRadius: "3px",
-		backgroundColor: "#39A2DB",
+		backgroundColor: medium,
 		padding: "3px",
 		overflow: "hidden",
+		transition: transition,
 		"&:hover": {
+			boxShadow: mediumShadow(light),
 			"& img": {
 				transform: "scale(1)",
 			},
@@ -25,7 +31,7 @@ const useStyles = makeStyles({
 		display: "block",
 		objectFit: "cover",
 		maxWidth: "100%",
-		transition: "all .2s ease",
+		transition: transition,
 	},
 	card_title: {
 		position: "absolute",
@@ -33,7 +39,7 @@ const useStyles = makeStyles({
 		right: "50%",
 		transform: "translateX(50%)",
 		background: "rgba(0,0,0,.5 )",
-		color: "#fff",
+		color: white,
 		textAlign: "center",
 		borderRadius: "3px",
 	},

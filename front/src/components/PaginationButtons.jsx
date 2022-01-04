@@ -34,17 +34,21 @@ const useStyles = makeStyles({
 			backgroundColor: btnHover,
 		},
 	},
-	prev: {
+	prevBtn: {
 		transform: "rotateY(180deg)",
 	},
 })
 
 export const PaginationButtons = () => {
-	const { prev, container, box, btn } = useStyles()
+	const { prevBtn, container, box, btn } = useStyles()
 	const { setPage, trendings } = useTrendingsContext()
 
 	const handlePagination = ({ target }) => {
-		switch (target.name) {
+		switch (
+			target.name ||
+			target.parentElement.parentElement.name ||
+			target.parentElement.name
+		) {
 			case "prev":
 				return setPage(trendings.page - 1)
 			case "next":
@@ -58,7 +62,7 @@ export const PaginationButtons = () => {
 		<div className={container}>
 			<div className={box}>
 				<button onClick={handlePagination} name='prev' className={btn}>
-					<NavigateNextOutlinedIcon className={prev} />
+					<NavigateNextOutlinedIcon className={prevBtn} />
 				</button>
 
 				<button onClick={handlePagination} name='next' className={btn}>

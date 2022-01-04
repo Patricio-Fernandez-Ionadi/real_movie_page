@@ -1,21 +1,35 @@
-import { makeStyles } from "@mui/styles"
 import React from "react"
-import { Link, Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 
+import { makeStyles } from "@mui/styles"
+
+import { useMenuContext } from "../context"
+import { color } from "../constant"
+import { Navigation } from "../components"
+
+const { darkBlue } = color
 const useStyles = makeStyles({
 	container: {
-		backgroundColor: "#053742",
+		backgroundColor: darkBlue,
 		minHeight: "100vh",
+		paddingLeft: "60px",
+	},
+	blur: {
+		filter: "blur(8px)",
 	},
 })
 
 export const General = () => {
-	const { container } = useStyles()
+	const { container, blur } = useStyles()
+
+	const { isOpen } = useMenuContext()
+
 	return (
 		<div className={container}>
-			<Link to='/'>Inicio</Link>
-			<Link to={`/trendings`}>Trendings</Link>
-			<Outlet />
+			<Navigation />
+			<div className={isOpen ? blur : ""}>
+				<Outlet />
+			</div>
 		</div>
 	)
 }
