@@ -6,6 +6,8 @@ export const trendingReducer = (state, action) => {
 			return { ...state, time_window: action.payload, page: 1 }
 		case "setMediaType":
 			return { ...state, media_type: action.payload, page: 1 }
+		case "setPage":
+			return { ...state, page: action.payload }
 		default:
 			return state
 	}

@@ -2,8 +2,8 @@
 import "./App.css"
 import { Routes, Route, Link } from "react-router-dom"
 
-import { Trendings, General, Home } from "./pages"
-import { TrendingsProvider } from "./context/trendings"
+import { Trendings, General, Home, MovieDetail } from "./pages"
+import { TrendingsProvider } from "./context"
 
 export const MovieApp = () => {
 	return (
@@ -13,6 +13,7 @@ export const MovieApp = () => {
 					<Route path='/' element={<General />}>
 						<Route index element={<Home />} />
 						<Route path='trendings' element={<Trendings />} />
+						<Route path=':media_type/:movieId' element={<MovieDetail />} />
 					</Route>
 					<Route
 						path='*'
