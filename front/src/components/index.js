@@ -1,5 +1,5 @@
 export { MovieCard } from "./MovieCard"
-export { Navigation } from "./Navigation"
+export { Navigation } from "./navigation/Navigation"
 export { PaginationButtons } from "./PaginationButtons"
 export { CardsContainer } from "./CardsContainer"
 export { TrendingsRadio } from "./TrendingsRadio"
