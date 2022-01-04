@@ -11,6 +11,7 @@ const useStyles = makeStyles({
 		position: "relative",
 		border: "1px solid rgba(0,0,0,.2)",
 		borderRadius: "3px",
+		backgroundColor: "#39A2DB",
 		padding: "3px",
 		overflow: "hidden",
 		"&:hover": {

@@ -33,11 +33,12 @@ export const TrendingsProvider = ({ children }) => {
 			.then((res) => {
 				setTrendings(res.data)
 			})
-	}, [state])
+	}, [media_type, time_window, page])
 
 	return (
 		<TrendingsContext.Provider
 			value={{
+				state,
 				trendings,
 				setTimeWindow,
 				setMediaType,
