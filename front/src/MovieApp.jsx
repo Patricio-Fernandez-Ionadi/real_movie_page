@@ -1,7 +1,7 @@
 // STYLES
 import { Routes, Route, Link } from "react-router-dom"
 
-import { Trendings, General, Home, MovieDetail } from "./pages"
+import { Trendings, General, Home, MovieDetail, Login } from "./pages"
 import { MenuContextProvider, TrendingsProvider } from "./context"
 
 export const MovieApp = () => {
@@ -14,6 +14,7 @@ export const MovieApp = () => {
 							<Route index element={<Home />} />
 							<Route path='trendings' element={<Trendings />} />
 							<Route path=':media_type/:movieId' element={<MovieDetail />} />
+							<Route path='login' element={<Login />} />
 						</Route>
 						<Route
 							path='*'

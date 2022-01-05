@@ -3,15 +3,18 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 import { color, navigation } from "../../constant"
+import { useMenuContext } from "../../context"
 
 const { contrainSize, extendedWidth } = navigation
-const { medium } = color
+const { medium, light } = color
 
 const useStyles = makeStyles({
 	menuLink: {
 		display: "block",
 		textDecoration: "none",
 		width: extendedWidth,
+		// backgroundColor: "red",
+		zIndex: 900,
 	},
 	listItem: {
 		borderBottom: "1px solid #ccc",
@@ -31,13 +34,24 @@ const useStyles = makeStyles({
 		color: medium,
 		padding: "0 10px",
 	},
+	active: {
+		backgroundColor: light,
+	},
 })
 
 export const NavigationLink = ({ route }) => {
-	const { menuLink, listItem, menuIcon, iconLabel } = useStyles()
+	const { menuLink, listItem, menuIcon, iconLabel, active } = useStyles()
+	const { setActiveRoute, activeRoute } = useMenuContext()
+
+	const onclick = (e) => {
+		setActiveRoute(route.id)
+	}
+
+	let activeLink = activeRoute === route.id
+
 	return (
-		<Link to={`${route.path}`} className={menuLink}>
-			<li className={listItem}>
+		<Link to={`${route.path}`} className={menuLink} onClick={onclick}>
+			<li className={`${listItem} ${activeLink && active}`}>
 				<div className={menuIcon}>{route.icon}</div>
 				<p className={iconLabel}>{route.name}</p>
 			</li>

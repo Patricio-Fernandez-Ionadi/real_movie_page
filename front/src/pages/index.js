@@ -1,4 +1,5 @@
-export { MovieDetail } from "./MovieDetail"
-export { Home } from "./Home"
 export { General } from "./General"
+export { Home } from "./Home"
+export { Login } from "./Login"
+export { MovieDetail } from "./MovieDetail"
 export { Trendings } from "./Trendings"

@@ -13,7 +13,6 @@ export const Trendings = () => {
 
 	return (
 		<div>
-			<h1>Trendings</h1>
 			<TrendingsRadio />
 			<PaginationButtons />
 			<CardsContainer />

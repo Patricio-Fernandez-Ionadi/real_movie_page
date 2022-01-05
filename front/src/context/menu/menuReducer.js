@@ -1,9 +1,11 @@
 export const menuReducuer = (state, action) => {
 	switch (action?.type) {
 		case "turnMenu":
-			return { isOpen: !state.isOpen }
+			return { ...state, isOpen: !state.isOpen }
 		case "closeMenu":
-			return { isOpen: false }
+			return { ...state, isOpen: false }
+		case "setRoute":
+			return { ...state, activeRoute: action.payload }
 		default:
 			return state
 	}

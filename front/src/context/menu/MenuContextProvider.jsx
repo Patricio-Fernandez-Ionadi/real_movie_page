@@ -4,22 +4,32 @@ import { MenuContext, menuReducuer } from ".."
 
 export const MenuContextProvider = ({ children }) => {
 	const [isOpenMenu, setMenuState] = useState(false)
-	const [{ isOpen }, dispatch] = useReducer(menuReducuer, {
+	const [activeRouteState, setActiveRouteState] = useState(0)
+
+	const [{ isOpen, activeRoute }, dispatch] = useReducer(menuReducuer, {
 		isOpen: isOpenMenu,
+		activeRoute: activeRouteState,
 	})
 
 	const handleMenu = () => dispatch({ type: "turnMenu" })
 	const closeMenu = () => dispatch({ type: "closeMenu" })
 
+	const setActiveRoute = (routeId) => {
+		dispatch({ type: "setRoute", payload: routeId })
+	}
+
 	useEffect(() => {
 		setMenuState(isOpen)
-	}, [isOpen])
+		setActiveRouteState(activeRoute)
+	}, [isOpen, activeRoute])
 
 	return (
 		<MenuContext.Provider
 			value={{
 				handleMenu,
 				closeMenu,
+				setActiveRoute,
+				activeRoute,
 				isOpen,
 			}}
 		>

@@ -40,9 +40,9 @@ export const routes = [
 		icon: <TrendingUpIcon />,
 	},
 	{
-		id: 1,
-		name: "Trendings",
-		path: "/trendings",
+		id: 2,
+		name: "Iniciar sesión",
+		path: "/login",
 		icon: <LoginIcon />,
 	},
 ]
