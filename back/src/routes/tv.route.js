@@ -1,6 +1,8 @@
 const tvRoute = require("express").Router()
 
-const detailTv = require("../controllers/tv.controller")
+const { detailTv, popularTv } = require("../controllers/tv.controller")
+
+tvRoute.get("/popular", popularTv)
 
 tvRoute.get("/:tvId", detailTv)
 

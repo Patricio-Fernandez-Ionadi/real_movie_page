@@ -1,4 +1,5 @@
 const { detailTvRequest } = require("../api/detailApi")
+const { popularTvRequest } = require("../api/popularApi")
 
 const Serie = require("../models/serieModel")
 
@@ -23,4 +24,14 @@ const detailTv = async (req, res) => {
 	return res.json(savedSerie)
 }
 
-module.exports = detailTv
+// retorna 20 series
+const popularTv = (req, res) => {
+	return popularTvRequest
+		.get("/popular")
+		.then((popular) => {
+			return res.json(popular.data)
+		})
+		.catch((err) => res.json(err))
+}
+
+module.exports = { detailTv, popularTv }

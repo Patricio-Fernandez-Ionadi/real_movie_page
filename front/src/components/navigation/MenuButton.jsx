@@ -9,10 +9,10 @@ import {
 	tinyShadow,
 	transition,
 	mediumShadow,
-	navigation,
+	sizes,
 } from "../../constant"
 
-const { extendedSize } = navigation
+const { extended } = sizes.navigation
 const { medium } = color
 
 const useStyles = makeStyles({
@@ -24,7 +24,7 @@ const useStyles = makeStyles({
 		height: "30px",
 		outline: "none",
 		position: "relative",
-		right: (isOpen) => (isOpen ? `-${extendedSize - 50}px` : "-10px"),
+		right: (isOpen) => (isOpen ? `-${extended - 50}px` : "-10px"),
 		top: "5px",
 		transition: transition,
 		width: "40px",

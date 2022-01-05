@@ -1,4 +1,5 @@
 const { detailMovieRequest } = require("../api/detailApi")
+const { popularMoviesRequest } = require("../api/popularApi")
 const Movie = require("../models/movieModel")
 
 // retorna 1 sola pelicula y la guarda en la DB si no está
@@ -44,4 +45,14 @@ const latestMovie = (req, res) => {
 		.catch((err) => res.json(err))
 }
 
-module.exports = { latestMovie, detailMovie }
+// retorna 20 peliculas
+const popularMovies = (req, res) => {
+	return popularMoviesRequest
+		.get("/popular")
+		.then((popular) => {
+			return res.json(popular.data)
+		})
+		.catch((err) => res.json(err))
+}
+
+module.exports = { latestMovie, detailMovie, popularMovies }

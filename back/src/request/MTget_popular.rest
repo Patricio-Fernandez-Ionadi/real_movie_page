@@ -1,0 +1,4 @@
+GET http://localhost:3001/movie/popular
+
+###
+GET http://localhost:3001/tv/popular

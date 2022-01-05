@@ -6,7 +6,7 @@ import { useMenuContext } from "../../context"
 import {
 	transition,
 	color,
-	navigation,
+	sizes,
 	openedMenu,
 	closedMenu,
 } from "../../constant"
@@ -15,9 +15,7 @@ import { MenuButton } from "./MenuButton"
 import { PageName } from "./PageName"
 
 const { darken } = color
-const { extendedSize } = navigation
-
-const extendedWidth = `${extendedSize}px`
+const { expanded } = sizes.navigation
 
 const useStyles = makeStyles({
 	container: {
@@ -29,7 +27,7 @@ const useStyles = makeStyles({
 		position: "fixed",
 		top: 0,
 		transition: transition,
-		width: extendedWidth,
+		width: `${expanded}px`,
 		zIndex: 999,
 	},
 	overlay: {

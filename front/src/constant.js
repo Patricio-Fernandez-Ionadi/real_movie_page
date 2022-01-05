@@ -12,11 +12,6 @@ export const color = {
 	btnHover: "#006B56",
 	white: "#fff",
 }
-export const navigation = {
-	contrainSize: 60,
-	extendedSize: 250,
-	extendedWidth: `250px`,
-}
 
 export const transition = "all .2s ease"
 
@@ -46,3 +41,15 @@ export const routes = [
 		icon: <LoginIcon />,
 	},
 ]
+
+export const sizes = {
+	cards: {
+		cardWidth: 200,
+		cardHeight: 300,
+		marginSides: 5,
+	},
+	navigation: {
+		expanded: 250,
+		contracted: 60,
+	},
+}

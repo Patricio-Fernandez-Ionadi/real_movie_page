@@ -4,19 +4,21 @@ import { Link } from "react-router-dom"
 import { makeStyles } from "@mui/styles"
 
 import { environment } from "../privateKeys"
-import { color, transition, mediumShadow } from "../constant"
+import { color, transition, mediumShadow, sizes } from "../constant"
 
 const { light, medium, white } = color
 
 const useStyles = makeStyles({
 	card: {
-		maxWidth: "200px",
-		maxHeight: "350px",
+		maxWidth: `${sizes.cards.cardWidth}px`,
+		minWidth: `${sizes.cards.cardWidth}px`,
+		height: `${sizes.cards.cardHeight}px`,
 		position: "relative",
 		border: "1px solid rgba(0,0,0,.2)",
 		borderRadius: "3px",
 		backgroundColor: medium,
 		padding: "3px",
+		margin: `0 ${sizes.cards.marginSides}px`,
 		overflow: "hidden",
 		transition: transition,
 		"&:hover": {

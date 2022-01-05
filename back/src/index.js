@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 		.json({
 			aplicacion: {
 				name: "The Movie Data Base Project",
-				status: "on",
+				status: 200,
 				servidor: process.env.NODE_ENV,
 			},
 		})
@@ -28,9 +28,7 @@ app.get("/", (req, res) => {
 })
 
 app.use("/trendings", trendingsRoute)
-
 app.use("/tv", tvRoute)
-
 app.use("/movie", movieRoute)
 
 const PORT = process.env.NODE_ENV === "test" ? 1234 : 3001

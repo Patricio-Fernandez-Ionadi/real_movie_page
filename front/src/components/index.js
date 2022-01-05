@@ -1,3 +1,4 @@
+export { Slider } from "./Slider"
 export { MovieCard } from "./MovieCard"
 export { Navigation } from "./navigation/Navigation"
 export { PaginationButtons } from "./PaginationButtons"

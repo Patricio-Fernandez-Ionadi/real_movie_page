@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useReducer } from "react"
+import React, { useReducer } from "react"
 
-import trendingsApi from "../../api/trendingsApi"
 import { TrendingsContext } from "./TrendingContext"
 import { trendingReducer } from ".."
+import { useTrendings } from "../../hooks/useTrendings"
 
 const INITIAL_STATE = {
 	media_type: "all",
@@ -11,7 +11,6 @@ const INITIAL_STATE = {
 }
 
 export const TrendingsProvider = ({ children }) => {
-	const [trendings, setTrendings] = useState()
 	const [state, dispatch] = useReducer(trendingReducer, INITIAL_STATE)
 	const { media_type, time_window, page } = state
 
@@ -27,13 +26,7 @@ export const TrendingsProvider = ({ children }) => {
 		}
 	}
 
-	useEffect(() => {
-		trendingsApi
-			.get(`/${media_type}/${time_window}?page=${page}`)
-			.then((res) => {
-				setTrendings(res.data)
-			})
-	}, [media_type, time_window, page])
+	const trendings = useTrendings({ media_type, time_window, page })
 
 	return (
 		<TrendingsContext.Provider

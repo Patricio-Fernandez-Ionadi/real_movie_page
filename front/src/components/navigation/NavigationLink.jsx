@@ -2,18 +2,17 @@ import { makeStyles } from "@mui/styles"
 import React from "react"
 import { Link } from "react-router-dom"
 
-import { color, navigation } from "../../constant"
+import { color, sizes } from "../../constant"
 import { useMenuContext } from "../../context"
 
-const { contrainSize, extendedWidth } = navigation
+const { contracted, expanded } = sizes.navigation
 const { medium, light } = color
 
 const useStyles = makeStyles({
 	menuLink: {
 		display: "block",
 		textDecoration: "none",
-		width: extendedWidth,
-		// backgroundColor: "red",
+		width: `${expanded}px`,
 		zIndex: 900,
 	},
 	listItem: {
@@ -26,7 +25,7 @@ const useStyles = makeStyles({
 		color: medium,
 		display: "flex",
 		justifyContent: "center",
-		width: `${contrainSize + 1}px`,
+		width: `${contracted + 1}px`,
 		borderRight: `1px solid ${medium}`,
 	},
 	iconLabel: {
