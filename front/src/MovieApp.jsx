@@ -1,8 +1,7 @@
-// STYLES
-import { Routes, Route, Link } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 
-import { Trendings, General, Home, MovieDetail, Login } from "./pages"
 import { MenuContextProvider, TrendingsProvider } from "./context"
+import { Trendings, General, Home, MovieDetail, Login, NotFound } from "./pages"
 
 export const MovieApp = () => {
 	return (
@@ -16,14 +15,7 @@ export const MovieApp = () => {
 							<Route path=':media_type/:movieId' element={<MovieDetail />} />
 							<Route path='login' element={<Login />} />
 						</Route>
-						<Route
-							path='*'
-							element={
-								<>
-									<p>Page not Found</p> <Link to='/'>volver al inicio</Link>
-								</>
-							}
-						/>
+						<Route path='*' element={<NotFound />} />
 					</Routes>
 				</TrendingsProvider>
 			</MenuContextProvider>

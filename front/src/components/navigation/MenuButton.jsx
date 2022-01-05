@@ -12,7 +12,7 @@ import {
 	sizes,
 } from "../../constant"
 
-const { extended } = sizes.navigation
+const { expanded } = sizes.navigation
 const { medium } = color
 
 const useStyles = makeStyles({
@@ -24,7 +24,7 @@ const useStyles = makeStyles({
 		height: "30px",
 		outline: "none",
 		position: "relative",
-		right: (isOpen) => (isOpen ? `-${extended - 50}px` : "-10px"),
+		right: (isOpen) => (isOpen ? `-${expanded - 50}px` : "-10px"),
 		top: "5px",
 		transition: transition,
 		width: "40px",

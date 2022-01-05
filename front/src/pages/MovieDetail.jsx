@@ -1,8 +1,8 @@
 import React from "react"
-import { useLocation } from "react-router-dom"
+// import { useLocation } from "react-router-dom"
 export const MovieDetail = () => {
-	const location = useLocation()
-	console.log(location)
+	// const location = useLocation()
+	// console.log(location)
 
 	return (
 		<div>

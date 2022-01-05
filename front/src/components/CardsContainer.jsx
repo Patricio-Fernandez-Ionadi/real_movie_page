@@ -10,7 +10,6 @@ const useStyles = makeStyles({
 		width: "100%",
 		maxWidth: "1100px",
 		justifyContent: "center",
-		// gap: "10px",
 		margin: "auto",
 	},
 })

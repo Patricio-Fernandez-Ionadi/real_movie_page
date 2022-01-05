@@ -21,6 +21,9 @@ const useStyles = makeStyles({
 		margin: `0 ${sizes.cards.marginSides}px`,
 		overflow: "hidden",
 		transition: transition,
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center",
 		"&:hover": {
 			boxShadow: mediumShadow(light),
 			"& img": {
@@ -49,6 +52,7 @@ const useStyles = makeStyles({
 
 export const MovieCard = ({ data }) => {
 	const classes = useStyles()
+
 	return (
 		<Link to={`/${data.media_type}/${data.id}`}>
 			<div className={classes.card}>
