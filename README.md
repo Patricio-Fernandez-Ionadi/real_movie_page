@@ -7,25 +7,25 @@ This project is deployed in
 
 Api used for this project [The Movie Data Base](https://www.themoviedb.org/).
 
-_Dependencies_
+**Dependencies**
 
-# front
+### front
 
-- @mui/icons-material: 5.2.5
-- @mui/material: 5.2.7
-- @mui/styles: 5.2.3
-- axios: 0.24.0
-- react-router-dom: 6.1.1
+- [@mui/icons-material: 5.2.5](https://mui.com/components/material-icons/)
+- [@mui/material: 5.2.7](https://mui.com/)
+- [@mui/styles: 5.2.3](https://mui.com/)
+- [axios: 0.24.0](https://github.com/axios/axios)
+- [react-router-dom: 6.1.1](https://reactrouter.com/docs/en/v6/api)
 
-# back
+### back
 
-- axios: 0.24.0
-- cors: 2.8.5
-- cross-env: 7.0.3
-- dotenv: 10.0.0
-- express: 4.17.1
-- mongoose: 6.1.1
-- nodemon: 2.0.15 (-D)
+- [axios: 0.24.0](https://github.com/axios/axios)
+- [cors: 2.8.5](https://github.com/expressjs/cors)
+- [cross-env: 7.0.3](https://github.com/kentcdodds/cross-env)
+- [dotenv: 10.0.0](https://github.com/motdotla/dotenv)
+- [express: 4.17.1](https://github.com/expressjs/express)
+- [mongoose: 6.1.1](https://github.com/Automattic/mongoose)
+- [nodemon: 2.0.15](https://github.com/remy/nodemon) (-D)
 
 <!-- ## Available Scripts
 
