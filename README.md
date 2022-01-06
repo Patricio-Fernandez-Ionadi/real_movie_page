@@ -3,6 +3,20 @@
 This project is deployed in
 [real-movie-page.netlify.app](https://real-movie-page.netlify.app/).
 
+## Api
+
+Api used for this project [The Movie Data Base](https://www.themoviedb.org/).
+
+## Dependencies
+
+# front
+
+-@emotion/react: ^11.7.1 -@emotion/styled: ^11.6.0 -@mui/icons-material: ^5.2.5
+-@mui/material: ^5.2.7, -@mui/styles: ^5.2.3, -@testing-library/jest-dom:
+5.15.0, -@testing-library/react: 11.2.7, -@testing-library/user-event: 12.8.3,
+-axios: 0.24.0, -react: 17.0.2, -react-dom: 17.0.2, -react-router-dom: 6.1.1,
+-react-scripts: 4.0.3
+
 <!-- ## Available Scripts
 
 In the project directory, you can run:
