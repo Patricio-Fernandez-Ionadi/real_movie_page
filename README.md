@@ -11,11 +11,21 @@ Api used for this project [The Movie Data Base](https://www.themoviedb.org/).
 
 # front
 
--@emotion/react: ^11.7.1 -@emotion/styled: ^11.6.0 -@mui/icons-material: ^5.2.5
--@mui/material: ^5.2.7, -@mui/styles: ^5.2.3, -@testing-library/jest-dom:
-5.15.0, -@testing-library/react: 11.2.7, -@testing-library/user-event: 12.8.3,
--axios: 0.24.0, -react: 17.0.2, -react-dom: 17.0.2, -react-router-dom: 6.1.1,
--react-scripts: 4.0.3
+- @mui/icons-material: 5.2.5
+- @mui/material: 5.2.7
+- @mui/styles: 5.2.3
+- axios: 0.24.0
+- react-router-dom: 6.1.1
+
+# back
+
+- axios: 0.24.0
+- cors: 2.8.5
+- cross-env: 7.0.3
+- dotenv: 10.0.0
+- express: 4.17.1
+- mongoose: 6.1.1
+- nodemon: 2.0.15 (-D)
 
 <!-- ## Available Scripts
 
