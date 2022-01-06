@@ -7,7 +7,7 @@ This project is deployed in
 
 Api used for this project [The Movie Data Base](https://www.themoviedb.org/).
 
-## Dependencies
+_Dependencies_
 
 # front
 
