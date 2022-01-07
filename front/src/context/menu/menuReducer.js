@@ -4,7 +4,7 @@ export const menuReducuer = (state, action) => {
 			return { ...state, isOpen: !state.isOpen }
 		case "closeMenu":
 			return { ...state, isOpen: false }
-		case "setRoute":
+		case "setRouteById":
 			return { ...state, activeRoute: action.payload }
 		default:
 			return state

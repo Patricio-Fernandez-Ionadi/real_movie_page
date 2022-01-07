@@ -47,17 +47,15 @@ export const Slider = ({ data, title }) => {
 			case "btn-next":
 				setSliderPosition((prev) => {
 					let posToReach = (prev += spaceToMove)
-
-					return maxSliderSize >= posToReach
-						? (prev = posToReach)
-						: (prev = maxSliderSize)
+					// console.log("next-btn")
+					return maxSliderSize >= posToReach ? posToReach : maxSliderSize
 				})
 				break
 			case "btn-prev": {
 				setSliderPosition((prev) => {
 					let posToReach = (prev -= spaceToMove)
-
-					return posToReach >= 0 ? (prev = posToReach) : (prev = 0)
+					// console.log("prev-btn")
+					return posToReach >= 0 ? posToReach : 0
 				})
 				break
 			}

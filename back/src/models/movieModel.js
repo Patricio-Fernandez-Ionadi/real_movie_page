@@ -1,15 +1,15 @@
-const {Schema, model} = require('mongoose')
+const { Schema, model } = require("mongoose")
 
 const movieSchema = new Schema({
 	adult: Boolean,
 	backdrop_path: String,
-	belongs_to_collection: [String],
+	// belongs_to_collection: [String],
 	budget: Number,
 	genres: [
 		{
 			id: Number,
-			name: String
-		}
+			name: String,
+		},
 	],
 	homepage: String,
 	id: Number,
@@ -24,14 +24,14 @@ const movieSchema = new Schema({
 			id: Number,
 			logo_path: String,
 			name: String,
-			origin_country: String
-		}
+			origin_country: String,
+		},
 	],
 	production_countries: [
 		{
 			iso_3166_1: String,
-			name: String
-		}
+			name: String,
+		},
 	],
 	release_date: String,
 	revenue: Number,
@@ -40,17 +40,17 @@ const movieSchema = new Schema({
 		{
 			english_name: String,
 			iso_639_1: String,
-			name: String
-		}
+			name: String,
+		},
 	],
 	status: String,
 	tagline: String,
 	title: String,
 	video: Boolean,
 	vote_average: Number,
-	vote_count: Number
+	vote_count: Number,
 })
 
-const Movie = model('movies', movieSchema)
+const Movie = model("movies", movieSchema)
 
 module.exports = Movie

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useReducer } from "react"
+
 import { MenuContext, menuReducuer } from ".."
 
 export const MenuContextProvider = ({ children }) => {
@@ -15,7 +16,7 @@ export const MenuContextProvider = ({ children }) => {
 	const closeMenu = () => dispatch({ type: "closeMenu" })
 
 	const setActiveRoute = (routeId) => {
-		dispatch({ type: "setRoute", payload: routeId })
+		dispatch({ type: "setRouteById", payload: routeId })
 	}
 
 	useEffect(() => {
