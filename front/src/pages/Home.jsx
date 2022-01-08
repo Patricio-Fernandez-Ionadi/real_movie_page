@@ -41,14 +41,16 @@ export const Home = () => {
 	const popularTvs = usePopularTvs()
 	// -----------------------------------------------------------------------
 	const { image, hero, overviewContent, explicit } = useStyles()
-	const [latest, setLatest] = useState({ id: null })
+	const [latest, setLatest] = useState()
 	// let oneDayOnMs = 864e7
 
 	useEffect(() => {
 		// setInterval(() => {
+
 		axios
 			.get(`http://localhost:3001/movie/latest`)
 			.then((res) => setLatest(res.data[0]))
+			.catch((err) => console.log("error: ", err))
 		// }, oneDayOnMs)
 	}, [])
 
@@ -56,7 +58,7 @@ export const Home = () => {
 
 	return (
 		<div>
-			{!latest || !latest.poster_path ? (
+			{!latest /*  || !latest.poster_path */ ? (
 				<h1>LOADING...</h1>
 			) : (
 				<div>

@@ -1,3 +1,4 @@
+export { LoginForm } from "./login/LoginForm"
 export { CardsContainer } from "./CardsContainer"
 export { MovieCard } from "./MovieCard"
 export { Navigation } from "./navigation/Navigation"

@@ -1,12 +1,11 @@
 import React from "react"
+import { LoginForm } from "../components"
+
 export const Login = () => {
 	return (
 		<div>
-			<h1>LOGIN</h1>
-			<form>
-				<input type='text' placeholder='username...' />
-				<input type='password' placeholder='password...' />
-			</form>
+			<h1>Welcome to a Real Movie Page!</h1>
+			<LoginForm />
 		</div>
 	)
 }
